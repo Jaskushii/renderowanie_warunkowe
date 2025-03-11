@@ -2,11 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 
 
-function loggedIn(){
+function LoggedIn(){
   return <button>LOGOUT</button>;
 }
 
-function notLoggedIn(){
+function NotLoggedIn(){
   return <button>Login</button>;
 }
 
@@ -15,7 +15,7 @@ function LoginControl(props){
 
   return (
     <>
-      {LoginStatus ? <loggedIn/> : <notLoggedIn/>}
+      {LoginStatus ? <LoggedIn/> : <NotLoggedIn/>}
     </>
   )
 }
@@ -31,10 +31,12 @@ function App() {
       Jeśli użytkownik NIE jest zalogowany, pokaż przycisk "Login". 
       Po kliknięciu zmień stan zalogowania użytkownika. 
       */}
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(<LoginControl LoginStatus={false}/>)
-     
-        
+      
+      <div>
+        <h1>Moja aplikacja</h1>
+
+        <LoginControl LoginStatus={false}/>
+      </div>
 
           
 
