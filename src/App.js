@@ -1,23 +1,43 @@
 import logo from './logo.svg';
 import './App.css';
 
+
+function loggedIn(){
+  return <button>LOGOUT</button>;
+}
+
+function notLoggedIn(){
+  return <button>Login</button>;
+}
+
+function LoginControl(props){
+  const LoginStatus = props.LoginStatus
+
+  return (
+    <>
+      {LoginStatus ? <loggedIn/> : <notLoggedIn/>}
+    </>
+  )
+}
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/*Zadanie 1: Warunkowe wyświetlanie przycisku 
+      Cel: Stwórz komponent LoginControl, który wyświetla różne przyciski w zależności od tego, czy użytkownik jest zalogowany.
+      Instrukcja: 
+      Stwórz komponent LoginControl. 
+      Jeśli użytkownik jest zalogowany, pokaż przycisk "Logout". 
+      Jeśli użytkownik NIE jest zalogowany, pokaż przycisk "Login". 
+      Po kliknięciu zmień stan zalogowania użytkownika. 
+      */}
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<LoginControl LoginStatus={false}/>)
+     
+        
+
+          
+
     </div>
   );
 }
